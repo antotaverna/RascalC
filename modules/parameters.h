@@ -13,39 +13,44 @@ public:
 
     // The name of the input random particle files (first set)
 	char *fname = NULL;
-	const char default_fname[500] = "/mnt/store1/oliverphilcox/Yuting/LRG_randoms_v2_10x.txt";
+    //const char default_fname[500] = "/mnt/store1/oliverphilcox/Yuting/LRG_randoms_v2_10x.txt";
+	const char default_fname[500] = "../den_files/nd3_00_randoms_10x.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;
-    const char default_radial_bin_file[500] = "/home/oliverphilcox/eBOSS_MockChallenge/radial_binning_cov.csv";
+    //const char default_radial_bin_file[500] = "/home/oliverphilcox/eBOSS_MockChallenge/radial_binning_cov.csv";
+    const char default_radial_bin_file[500] = "radial_binning_cov.csv";
 
     // The name of the correlation function file for the first set of particles
 	char *corname = NULL;
-	const char default_corname[500] = "/home/oliverphilcox/eBOSS_MockChallenge/v3_low/xi_n100_m10_periodic_11.dat";
+	//const char default_corname[500] = "/home/oliverphilcox/eBOSS_MockChallenge/v3_low/xi_n100_m10_periodic_11.dat";
+	const char default_corname[500] = "xi/xi_n200_m20_periodic_11.dat";
 
     // Name of the correlation function radial binning .csv file
     char *radial_bin_file_cf = NULL;
-    const char default_radial_bin_file_cf[500] = "/home/oliverphilcox/eBOSS_MockChallenge/v3_low/radial_binning_corr_low.csv";
+    //const char default_radial_bin_file_cf[500] = "/home/oliverphilcox/eBOSS_MockChallenge/v3_low/radial_binning_corr_low.csv";
+    const char default_radial_bin_file_cf[500] = "radial_binning_corr.csv";
 
     // Number of galaxies in first dataset
-    Float nofznorm =156800;
+    Float nofznorm=1000188;
 
     // Output directory
     char *out_file = NULL;
-    const char default_out_file[500] = "/home/oliverphilcox/eBOSS_MockChallenge/v7/";
+    //const char default_out_file[500] = "/home/oliverphilcox/eBOSS_MockChallenge/v7/";
+    const char default_out_file[500] = "output/";
 
     // The number of mu bins in the correlation function
-    int mbin_cf = 10;
+    int mbin_cf = 20;
 
     // The number of threads to run on
-	int nthread = 30;
+	int nthread = 10;
 
     // The grid size, which should be tuned to match boxsize and rmax.
 	// This uses the maximum width of the cuboidal box.
-	int nside = 71;
+	int nside = 151;
 
     // Whether or not we are using a periodic box
-	bool perbox = false;
+	bool perbox = true;
 
     //---------- (r,mu) PARAMETERS ------------------------------------------
 
@@ -67,7 +72,9 @@ public:
     int max_l = 2; // max Legendre moment (must be even unless computing 3PCF)
 
     char *phi_file = NULL; // Survey correction function coefficient file
-    const char default_phi_file[500] = "/home/oliverphilcox/eBOSS_MockChallenge/BinCorrectionFactor_n25_periodic_11.txt";
+    //const char default_phi_file[500] = "/home/oliverphilcox/eBOSS_MockChallenge/BinCorrectionFactor_n25_periodic_11.txt";
+    const char default_phi_file[500] = "BinCorrectionFactor_n28_periodic_11.txt";
+
 
     //-------- POWER PARAMETERS (not yet publicly released) ------------------
 
@@ -80,16 +87,16 @@ public:
     //---------- PRECISION PARAMETERS ---------------------------------------
 
     // Maximum number of iterations to compute the C_ab integrals over
-    int max_loops = 40;
+    int max_loops = 10;
 
     // Exit after relative Frobenius difference is less than (convergence_threshold_percent %) for (convergence_ntimes) times
     Float convergence_threshold_percent = 0.01;
     int convergence_ntimes = 10;
 
     // Number of random cells to draw at each stage
-    int N2 = 20; // number of j cells per i cell
-    int N3 = 40; // number of k cells per j cell
-    int N4 = 80; // number of l cells per k cell
+    int N2 = 10; // number of j cells per i cell
+    int N3 = 10; // number of k cells per j cell
+    int N4 = 10; // number of l cells per k cell
 
     //------------------ EXTRA 3PCF AUTOCOVARIANCE PARAMETERS ----------------
 
