@@ -13,22 +13,18 @@ public:
 
     // The name of the input random particle files (first set)
 	char *fname = NULL;
-    //const char default_fname[500] = "/mnt/store1/oliverphilcox/Yuting/LRG_randoms_v2_10x.txt";
 	const char default_fname[500] = "../den_files/nd3_00_randoms_10x.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;
-    //const char default_radial_bin_file[500] = "/home/oliverphilcox/eBOSS_MockChallenge/radial_binning_cov.csv";
     const char default_radial_bin_file[500] = "radial_binning_cov.csv";
 
     // The name of the correlation function file for the first set of particles
 	char *corname = NULL;
-	//const char default_corname[500] = "/home/oliverphilcox/eBOSS_MockChallenge/v3_low/xi_n100_m10_periodic_11.dat";
 	const char default_corname[500] = "xi/xi_n200_m20_periodic_11.dat";
 
     // Name of the correlation function radial binning .csv file
     char *radial_bin_file_cf = NULL;
-    //const char default_radial_bin_file_cf[500] = "/home/oliverphilcox/eBOSS_MockChallenge/v3_low/radial_binning_corr_low.csv";
     const char default_radial_bin_file_cf[500] = "radial_binning_corr.csv";
 
     // Number of galaxies in first dataset
@@ -36,7 +32,6 @@ public:
 
     // Output directory
     char *out_file = NULL;
-    //const char default_out_file[500] = "/home/oliverphilcox/eBOSS_MockChallenge/v7/";
     const char default_out_file[500] = "output/";
 
     // The number of mu bins in the correlation function
@@ -69,11 +64,10 @@ public:
 
     //-------- LEGENDRE PARAMETERS -------------------------------------------
 
-    int max_l = 2; // max Legendre moment (must be even unless computing 3PCF)
+    int max_l = 0; // max Legendre moment (must be even unless computing 3PCF)
 
     char *phi_file = NULL; // Survey correction function coefficient file
-    //const char default_phi_file[500] = "/home/oliverphilcox/eBOSS_MockChallenge/BinCorrectionFactor_n25_periodic_11.txt";
-    const char default_phi_file[500] = "BinCorrectionFactor_n28_periodic_11.txt";
+    const char default_phi_file[500] = "BinCorrectionFactor_n25_periodic_11.txt";
 
 
     //-------- POWER PARAMETERS (not yet publicly released) ------------------
@@ -173,7 +167,7 @@ public:
     int cf_loops = 10;
 
     // The periodicity of the position-space cube.
-	Float boxsize = 200.; // this is only used if the input particles are made randomly
+	Float boxsize = 1000.; // this is only used if the input particles are made randomly
 
 	// The particles will be read from the unit cube, but then scaled by boxsize.
 	Float rescale = 1.;   // If left zero or negative, set rescale=boxsize
