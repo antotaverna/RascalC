@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-data = np.load('Rescaled_Covariance_Matrices_Legendre_n25_l2.npz')
+#data = np.load('Rescaled_Covariance_Matrices_Legendre_n25_l2.npz') #nd3_00 fixedAmp_001
+data = np.load('nd3_00/Rescaled_Covariance_Matrices_Legendre_n25_l2.npz') #nd3_00 fixedAmp_002
 print(data.files)
 
 cov=data.get('full_theory_covariance')
@@ -18,10 +19,10 @@ for i in range(0,nbin):
         R[i,j] = cov[i,j]/np.sqrt(cov[i,i]*cov[j,j])
 
 sns.heatmap(R, vmin=0, vmax=1)
+plt.show()
 
 
 nbin2=25
-
 cov_l0 = np.zeros((nbin2, nbin2))
 R_l0 = np.zeros((nbin2, nbin2))
 cov_l2 = np.zeros((nbin2, nbin2))
@@ -45,7 +46,12 @@ for i in range(0,nbin):
                 R_l2[iii,jjj] = cov[i,j]/np.sqrt(cov[i,i]*cov[j,j])
 
 
-sns.heatmap(cov_l2, vmin=0, vmax=1)
+#sns.heatmap(cov_l2, vmin=0, vmax=1)
+sns.heatmap(cov_l0)
+plt.show()
+
+sns.heatmap(R_l0, vmin=0, vmax=1.)
+plt.show()
 
 ##################################################
 ######################### l0 #####################
@@ -57,7 +63,7 @@ cov0=data0.get('full_theory_covariance')
 cov0_i=data0.get('individual_theory_covariances')
 
 
-sns.heatmap(cov0, cmap="crest")
+sns.heatmap(cov0)
 plt.show()
 
 nbin=25
@@ -69,9 +75,35 @@ for i in range(0,nbin):
 sns.heatmap(R0, vmin=0, vmax=1)
 plt.show()
 
+# 25 bines entre r∈[25,150] sizebin=5 Mpc/h
+error = np.diag(cov0)**0.5
+
+##################################################
+##################################################
+#calcuate 2pcr usin pycorr
+##################################################
 
 
+dcorr=np.genfromtxt('nd3_00/pycorr_z0_nd3_00_xi_jkn_8_3_r_25_150.dat')
+
+r = dcorr[:,0]
+xi = dcorr[:,1]
+err = dcorr[:,2]
+err2 = np.diag(cov_l0)**0.5
+errp = dcorr[:,3]
+
+#plt.plot(err, err2)
+#plt.show()
+
+plt.errorbar(r,r**2*xi,yerr=r**2*err,marker='.', label='pycorr nsv=8^3 (binsize=5 Mpc/h)')
+plt.errorbar(r,r**2*xi,yerr=r**2*err2, label='error RascalC')
+plt.errorbar(r,r**2*xi,yerr=r**2*errp, label='Poisson: (1 + ξ)/√(DD)',color='y')
 
 
+dd=np.genfromtxt('nd3_00/xi_to_multipoles.dat')
+r = dd[:,0]
+xi = dd[:,1]
+plt.plot(r,r**2*xi,color='red', linestyle='dotted', label='ξ0 RascalC (binsize=1 Mpc/h)')
 
-
+plt.legend()
+plt.show()

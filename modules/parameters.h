@@ -13,7 +13,9 @@ public:
 
     // The name of the input random particle files (first set)
 	char *fname = NULL;
-	const char default_fname[500] = "../den_files/nd3_00_randoms_10x.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x.txt";
+	const char default_fname[500] = "../den_files/nd1_00_randoms_10x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x_fixedAmp_002.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;
@@ -21,24 +23,31 @@ public:
 
     // The name of the correlation function file for the first set of particles
 	char *corname = NULL;
-	const char default_corname[500] = "xi/xi_n200_m20_periodic_11.dat";
+	//const char default_corname[500] = "output/xi_n200_m20_periodic_11.dat";
+	const char default_corname[500] = "output/nd1_00/xi_n200_m20_periodic_11.dat";
+	//const char default_corname[500] = "output/nd3_00/xi_n200_m20_periodic_11.dat";
 
     // Name of the correlation function radial binning .csv file
     char *radial_bin_file_cf = NULL;
     const char default_radial_bin_file_cf[500] = "radial_binning_corr.csv";
 
     // Number of galaxies in first dataset
-    Float nofznorm=1000188;
+    //Float nofznorm=1000188; //nd3_00 fixedAmp_001
+    Float nofznorm=99093283; //nd1_00 fixedAmp_002
+    //Float nofznorm=1000057; //nd3_00 fixedAmp_002
 
     // Output directory
     char *out_file = NULL;
-    const char default_out_file[500] = "output/";
+    //const char default_out_file[500] = "output/";
+    const char default_out_file[500] = "output/nd1_00/";
+    //const char default_out_file[500] = "output/nd3_00/";
 
     // The number of mu bins in the correlation function
     int mbin_cf = 20;
 
     // The number of threads to run on
-	int nthread = 10;
+	//int nthread = 10;
+	int nthread = 8;
 
     // The grid size, which should be tuned to match boxsize and rmax.
 	// This uses the maximum width of the cuboidal box.
@@ -67,7 +76,9 @@ public:
     int max_l = 0; // max Legendre moment (must be even unless computing 3PCF)
 
     char *phi_file = NULL; // Survey correction function coefficient file
-    const char default_phi_file[500] = "BinCorrectionFactor_n25_periodic_11.txt";
+    //const char default_phi_file[500] = "BinCorrectionFactor_n25_periodic_11.txt";
+    const char default_phi_file[500] = "output/nd1_00/BinCorrectionFactor_n25_periodic_11.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11.txt";
 
 
     //-------- POWER PARAMETERS (not yet publicly released) ------------------
