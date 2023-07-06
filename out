@@ -1,0 +1,11 @@
+nohup: ignoring input
+Custom binning
+Running with points in [xmin,xmax] = 0.000000,999.999940 with periodic wrapping = 1000.000000
+Running with points in [ymin,ymax] = 0.000000,999.999940 with periodic wrapping = 1000.000000
+Running with points in [zmin,zmax] = 0.000000,999.999940 with periodic wrapping = 1000.000000
+In gridlink_double> Running with [nmesh_x, nmesh_y, nmesh_z]  = 10,10,5.  Time taken =   2.211 sec
+countpairs_s_mu_double> gridlink seems inefficient nmesh = (10, 10, 5). Boosting bin refine factor - should lead to better performance
+xmin = 0.000000 xmax=999.999940 smax = 200.000000
+In gridlink_double> Running with [nmesh_x, nmesh_y, nmesh_z]  = 10,10,5.  Time taken =   1.992 sec
+Using AVX kernel
+0%
