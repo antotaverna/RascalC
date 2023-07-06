@@ -96,14 +96,18 @@ errp = dcorr[:,3]
 #plt.show()
 
 plt.errorbar(r,r**2*xi,yerr=r**2*err,marker='.', label='pycorr nsv=8^3 (binsize=5 Mpc/h)')
-plt.errorbar(r,r**2*xi,yerr=r**2*err2, label='error RascalC')
+#plt.errorbar(r,r**2*xi,yerr=r**2*err2, label='error RascalC')
 plt.errorbar(r,r**2*xi,yerr=r**2*errp, label='Poisson: (1 + ξ)/√(DD)',color='y')
 
 
 dd=np.genfromtxt('nd3_00/xi_to_multipoles.dat')
 r = dd[:,0]
 xi = dd[:,1]
-plt.plot(r,r**2*xi,color='red', linestyle='dotted', label='ξ0 RascalC (binsize=1 Mpc/h)')
+plt.plot(r,r**2*xi,color='red', linestyle='dotted', label='ξ0 RascalC (binsize=1 Mpc/h) nd3_00')
+dd=np.genfromtxt('nd1_00/xi_to_multipoles.dat')
+r = dd[:,0]
+xi = dd[:,1]
+plt.plot(r,r**2*xi,color='blue', linestyle='dotted', label='ξ0 RascalC (binsize=1 Mpc/h) nd1_00')
 
 plt.legend()
 plt.show()
