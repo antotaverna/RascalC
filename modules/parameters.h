@@ -47,11 +47,12 @@ public:
 
     // The number of threads to run on
 	//int nthread = 10;
-	int nthread = 8;
+	int nthread = 64;
 
     // The grid size, which should be tuned to match boxsize and rmax.
 	// This uses the maximum width of the cuboidal box.
-	int nside = 151;
+	//int nside = 151; //nd3_00
+	int nside = 401;
 
     // Whether or not we are using a periodic box
 	bool perbox = true;
