@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -A 128cores
 #SBATCH --job-name=RascalC
-#SBATCH --output=/home/ataverna/outRascalCs.txt
+#SBATCH --output=/home/ataverna/outRascalC.txt
 #SBATCH --error=/home/ataverna/errorRascalC.txt
 ###SBATCH --nodes=4
 #
@@ -28,8 +28,9 @@ export NUMEXPR_MAX_THREADS=64
 ##make
 ##./cov -def
 
-##python python/post_process_legendre.py output/nd1_00/ 25 0 10 output/nd1_00/ 1.
+python python/post_process_legendre.py output/nd1_00/ 25 0 10 output/nd1_00/ 1.
 ##python python/post_process_legendre.py output/nd3_00/ 25 2 10 output/nd3_00/ 1.
 
-python python/convert_xi_to_multipoles.py output/nd1_00/xi_n200_m20_periodic_11.dat 0 output/nd1_00/xi_to_multipoles.dat
+
+##python python/convert_xi_to_multipoles.py output/nd1_00/xi_n200_m20_periodic_11.dat 0 output/nd1_00/xi_to_multipoles.dat
 ##python python/convert_xi_to_multipoles.py output/nd3_00/xi_n200_m20_periodic_11.dat 0 output/nd3_00/xi_to_multipoles.dat
