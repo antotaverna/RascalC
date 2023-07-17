@@ -12,7 +12,8 @@ cov_i=data.get('individual_theory_covariances')
 sns.heatmap(cov, cmap="crest")
 plt.show()
 
-nbin=50
+nbin=25
+#nbin=50
 R = np.zeros((nbin, nbin))
 for i in range(0,nbin):
     for j in range(0,nbin):
@@ -80,10 +81,10 @@ error = np.diag(cov0)**0.5
 
 ##################################################
 ##################################################
-#calcuate 2pcr usin pycorr
+#calcuate 2pcr using pycorr
 ##################################################
 
-
+#d1=np.genfromtxt('../../get_env/n_density/test_jackknife/files/pycorr_z0_nd3_00_xi_jkn_8_3_r_25_150.dat')
 dcorr=np.genfromtxt('nd3_00/pycorr_z0_nd3_00_xi_jkn_8_3_r_25_150.dat')
 
 r = dcorr[:,0]
@@ -104,10 +105,31 @@ dd=np.genfromtxt('nd3_00/xi_to_multipoles.dat')
 r = dd[:,0]
 xi = dd[:,1]
 plt.plot(r,r**2*xi,color='red', linestyle='dotted', label='ξ0 RascalC (binsize=1 Mpc/h) nd3_00')
+
+
+plt.legend()
+plt.show()
+
+#nd1_00
+###################################
+data = np.load('nd1_00/Rescaled_Covariance_Matrices_Legendre_n25_l0.npz') #nd1_00 fixedAmp_002
+print(data.files)
+cov=data.get('full_theory_covariance')
+
+# 25 bines entre r∈[25,150] sizebin=5 Mpc/h
+error = np.diag(cov)**0.5
+
+dcut=np.genfromtxt('nd1_00/pru_plot.dat')
+rc=dcut[:,0]
+xic=dcut[:,1]
+
+#d1=np.genfromtxt('../../get_env/n_density/test_jackknife/files/pycorr_z0_nd1_00_xi_jkn_8_3_r_60_160.dat')
 dd=np.genfromtxt('nd1_00/xi_to_multipoles.dat')
 r = dd[:,0]
 xi = dd[:,1]
 plt.plot(r,r**2*xi,color='blue', linestyle='dotted', label='ξ0 RascalC (binsize=1 Mpc/h) nd1_00')
+plt.plot(rc,rc**2*xic,color='red', linestyle='dotted', label='ξ0 RascalC (binsize=5 Mpc/h) nd1_00')
+plt.errorbar(rc,rc**2*xic,yerr=rc**2*error,marker='.', label='RascalC error')
 
 plt.legend()
 plt.show()
