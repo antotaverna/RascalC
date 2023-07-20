@@ -13,11 +13,11 @@ python python/write_binning_file_linear.py 200 0 200 radial_binning_corr.csv
 
 #fixedAmp_002 ----------------------------------
 #python python/xi_estimator_periodic.py {GALAXY_FILE} {RADIAL_BIN_FILE} {BOXSIZE} {MU_MAX} {N_MU_BINS} {NTHREADS} {OUTPUT_DIR} [{GALAXY_FILE_2}]
-python python/xi_estimator_periodic.py ../den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt radial_binning_corr.csv 1000 1. 20 8 output/nd1_00/
+#python python/xi_estimator_periodic.py ../den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt radial_binning_corr.csv 1000 1. 20 8 output/nd1_00/
 #python python/xi_estimator_periodic.py ../den_files/mass_cuts_nd3_00_z0_fixedAmp_002.txt radial_binning_corr.csv 1000 1. 20 8 output/nd3_00/
 
 #python python/compute_correction_function.py {GALAXY_FILE} {BIN_FILE} {OUTPUT_DIR} {PERIODIC} [{RR_COUNTS}]
-python python/compute_correction_function.py ../den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt radial_binning_cov.csv output/nd1_00/ 1
+#python python/compute_correction_function.py ../den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt radial_binning_cov.csv output/nd1_00/ 1
 #python python/compute_correction_function.py ../den_files/mass_cuts_nd3_00_z0_fixedAmp_002.txt radial_binning_cov.csv output/nd3_00/ 1
 
 make

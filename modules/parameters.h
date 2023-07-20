@@ -15,7 +15,8 @@ public:
 	char *fname = NULL;
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x.txt";
 	//const char default_fname[500] = "../den_files/nd1_00_randoms_10x_fixedAmp_002.txt";
-	const char default_fname[500] = "../den_files/nd3_00_randoms_10x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x_fixedAmp_002.txt";
+	const char default_fname[500] = "../den_files/nd3_00_randoms_1x_fixedAmp_002.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;
@@ -51,8 +52,9 @@ public:
 
     // The grid size, which should be tuned to match boxsize and rmax.
 	// This uses the maximum width of the cuboidal box.
-	int nside = 151; //nd3_00
-	//int nside = 401;
+	int nside = 71; //nd3_00
+	//int nside = 151; //nd3_00
+	//int nside = 401; //nd1_00
 
     // Whether or not we are using a periodic box
 	bool perbox = true;
@@ -104,9 +106,9 @@ public:
     int convergence_ntimes = 10;
 
     // Number of random cells to draw at each stage
-    int N2 = 10; // number of j cells per i cell
-    int N3 = 10; // number of k cells per j cell
-    int N4 = 10; // number of l cells per k cell
+    int N2 = 20; // number of j cells per i cell
+    int N3 = 40; // number of k cells per j cell
+    int N4 = 80; // number of l cells per k cell
 
     //------------------ EXTRA 3PCF AUTOCOVARIANCE PARAMETERS ----------------
 
