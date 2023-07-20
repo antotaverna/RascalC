@@ -7,13 +7,15 @@ import sys
 import numpy as np
 
 # PARAMETERS
-Dname = '/home/ataverna/den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt'
+#Dname = '/home/ataverna/den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt'
+Dname = '/home/ataverna/den_files/mass_cuts_nd3_00_z0_fixedAmp_002.txt'
 binfile = 'radial_binning_corr.csv'
 boxsize = 1000.
 mu_max = 1.
 nmu_bins = 20
 nthreads = 64
-outdir = 'output/nd1_00/'
+#outdir = 'output/nd1_00/'
+outdir = 'output/nd3_00/'
 
 multifield = False
 
