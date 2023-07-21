@@ -27,6 +27,7 @@ make
 #python python/post_process_legendre.py {COVARIANCE_DIR} {N_R_BINS} {MAX_L} {N_SUBSAMPLES} {OUTPUT_DIR} [{SHOT_NOISE_RESCALING}]
 python python/post_process_legendre.py output/nd1_00/ 25 0 10 output/nd1_00/ 1.
 #python python/post_process_legendre.py output/nd3_00/ 25 2 10 output/nd3_00/ 1.
+#(N_SUBSAMPLES == N_LOOPS (parameters.h))
 
 #Computing Legendre Moments of Correlation Functions
 #python python/convert_xi_to_multipoles.py {INFILE} {MAX_L} {OUTFILE}
