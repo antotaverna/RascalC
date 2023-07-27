@@ -68,9 +68,9 @@ plt.show()
 error = np.diag(cov)**0.5
 
 ##################################################
-##################################################
+#############################
 #calcuate 2pcr using pycorr
-##################################################
+#############################
 dcorr=np.genfromtxt('nd3_00/pycorr_z0_nd3_00_xi_jkn_8_3_r_25_150.dat')
 
 r = dcorr[:,0]
@@ -78,6 +78,15 @@ xi = dcorr[:,1]
 err = dcorr[:,2]
 errp = dcorr[:,3]
 
+##############################
+#calcuate 2pcr using fortran
+##############################
+#ff=np.genfromtxt('../../get_env/n_density/test_jackknife/fortran/output/xi_lin_nsv3_512_bao_nd3_00_rodajas.dat')
+ff=np.genfromtxt('../../get_env/n_density/test_jackknife/fortran/output/xi_lin_nsv3_512_bao_nd3_00_subboxes.dat')
+
+r_f = ff[:,0]-2.5
+xi_f = ff[:,1]
+err_f = ff[:,2]
 
 ################### plot ###################
 fig, (ax1,ax2) = plt.subplots(1,2, figsize=(12,5))
@@ -99,6 +108,8 @@ ax1.set_ylabel(r'$r^2 \xi(r)$')
 ax1.legend()
 
 ax2.errorbar(r,r**2*xi,yerr=r**2*err, marker='.', label='pycorr nsv=8^3 (binsize=5 Mpc/h)')
+#ax2.errorbar(r_f,r_f**2*xi_f,yerr=r_f**2*err_f, marker='.', label='fortran nsv=8^3 (binsize=5 Mpc/h)')
+#ax2.errorbar(r,r**2*xi,yerr=r**2*error, label='error RascalC (binsize=5 Mpc/h)')
 #ax2.set_aspect(0.5)
 ax2.set_ylim(-80,90)
 ax2.set_title('Pycorr')
