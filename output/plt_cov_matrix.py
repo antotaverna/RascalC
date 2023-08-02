@@ -4,7 +4,7 @@ import seaborn as sns
 
 ##################################################
 ######################### l0 #####################
-
+# r in [25-150]
 data = np.load('nd3_00/Rescaled_Covariance_Matrices_Legendre_n25_l0_1x.npz') #nd3_00 fixedAmp_002
 print(data.files)
 
@@ -12,6 +12,12 @@ cov=data.get('full_theory_covariance')
 cov_i=data.get('individual_theory_covariances')
 
 cov_pycorr=np.genfromtxt('nd3_00/pycorr_z0_nd3_00_cov_jkn_8_3_r_25_150.dat')
+
+# r in [60-160]
+d2 = np.load('nd3_00/Rescaled_Covariance_Matrices_Legendre_n25_l0_60_160_1x.npz') #nd3_00 fixedAmp_002
+
+cov2=d2.get('full_theory_covariance')
+cov2_pycorr=np.genfromtxt('nd3_00/pycorr_z0_nd3_00_cov_jkn_8_3_r_60_160.dat')
 
 ################### plot ###################
 fig, (ax1,ax2) = plt.subplots(1,2, figsize=(8,4))
@@ -66,6 +72,8 @@ plt.show()
 
 # 25 bines entre r∈[25,150] sizebin=5 Mpc/h
 error = np.diag(cov)**0.5
+# 25 bines entre r∈[60,160] sizebin=4 Mpc/h
+error2 = np.diag(cov2)**0.5
 
 ##################################################
 #############################
@@ -77,6 +85,11 @@ r = dcorr[:,0]
 xi = dcorr[:,1]
 err = dcorr[:,2]
 errp = dcorr[:,3]
+
+dcorr2=np.genfromtxt('nd3_00/pycorr_z0_nd3_00_xi_jkn_8_3_r_60_160.dat')
+rb = dcorr2[:,0]
+xib = dcorr2[:,1]
+errb = dcorr2[:,2]
 
 ##############################
 #calcuate 2pcr using fortran
@@ -99,7 +112,8 @@ num_ticks = 25
 ticks = np.linspace(25, 145, num_ticks)
 
 ax1.errorbar(r,r**2*xi,yerr=r**2*error, label='error RascalC (binsize=5 Mpc/h)')
-ax1.errorbar(r,r**2*xi,yerr=r**2*errp, marker='.', markersize=4, linestyle="None", label='Poisson: (1 + ξ)/√(DD)',color='r')
+ax1.errorbar(r,r**2*xi,yerr=r**2*errp, marker='.', markersize=4, linestyle="None", label='Poisson: (1 + ξ)/√(DD)',color='y')
+ax1.errorbar(rb,rb**2*xib,yerr=rb**2*error2, marker='.', markersize=4, linestyle="None", label='error RascalC (binsize=4 Mpc/h)',color='r')
 #ax1.set_aspect(0.5)
 ax1.set_title('RascalC')
 ax1.set_ylim(-80,90)
@@ -110,6 +124,7 @@ ax1.legend()
 ax2.errorbar(r,r**2*xi,yerr=r**2*err, marker='.', label='pycorr nsv=8^3 (binsize=5 Mpc/h)')
 #ax2.errorbar(r_f,r_f**2*xi_f,yerr=r_f**2*err_f, marker='.', label='fortran nsv=8^3 (binsize=5 Mpc/h)')
 #ax2.errorbar(r,r**2*xi,yerr=r**2*error, label='error RascalC (binsize=5 Mpc/h)')
+ax2.errorbar(rb,rb**2*xib,yerr=rb**2*errb, marker='.', markersize=4, linestyle="None", label='error RascalC (binsize=4 Mpc/h)',color='r')
 #ax2.set_aspect(0.5)
 ax2.set_ylim(-80,90)
 ax2.set_title('Pycorr')
