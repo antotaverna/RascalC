@@ -24,10 +24,10 @@ outdir = '/home/ataverna/RascalC/output/nd3_00/'
 #env_list = ['nd0_00','nd0_96', 'nd1_00','nd1_22', 'nd2_00', 'nd3_00']
 env = '3_00'
 
-rmin= 25.0; rmax= 150.0
+#rmin= 25.0; rmax= 150.0
 #rmin= 70.0; rmax= 150.0
 #rmin= 50.0; rmax= 170.0
-#rmin= 60.0; rmax= 160.0
+rmin= 60.0; rmax= 160.0
 #rmin= 30.0; rmax= 170.0
 #rmin= 20.0; rmax= 200.0
 
@@ -36,7 +36,8 @@ rmaxs= str(int(rmax))
 
 if((rmin==25.) & (rmax==150.)):nbin=26
 if((rmin==70.) & (rmax==150.)):nbin=17
-if((rmin==60.) & (rmax==160.)):nbin=21
+#if((rmin==60.) & (rmax==160.)):nbin=21
+if((rmin==60.) & (rmax==160.)):nbin=26 #binsize=4 Mpc/h
 if((rmin==50.) & (rmax==170.)):nbin=25
 if((rmin==30.) & (rmax==150.)):nbin=25
 if((rmin==30.) & (rmax==170.)):nbin=29

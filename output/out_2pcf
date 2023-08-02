@@ -4,17 +4,17 @@ Inicio lectura
 /home/ataverna/den_files/mass_cuts_nd3_00_z0_fixedAmp_002.h5
 3_00 (1000057, 3)
 3_00 (1000057, 3)
-[000000.35]  07-20 20:09  numexpr.utils                INFO     Note: detected 256 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-[000000.35]  07-20 20:09  numexpr.utils                INFO     Note: NumExpr detected 256 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
-[000010.81]  07-20 20:09  BoxSubsampler                INFO     Labels from 0 to 124.
-[000010.90]  07-20 20:09  TwoPointCorrelationFunction  INFO     Using estimator <class 'pycorr.twopoint_jackknife.JackknifeNaturalTwoPointEstimator'>.
-[000010.90]  07-20 20:09  TwoPointCorrelationFunction  INFO     Computing two-point counts D1D2.
-[000026.47]  07-20 20:09  TwoPointCorrelationFunction  INFO     Analytically computing two-point counts R1R2.
-Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_cov_jkn_5_3_r_25_150.dat
-Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_xi_jkn_5_3_r_25_150.dat
-[000026.87]  07-20 20:09  BoxSubsampler                INFO     Labels from 0 to 511.
-[000026.99]  07-20 20:09  TwoPointCorrelationFunction  INFO     Using estimator <class 'pycorr.twopoint_jackknife.JackknifeNaturalTwoPointEstimator'>.
-[000026.99]  07-20 20:09  TwoPointCorrelationFunction  INFO     Computing two-point counts D1D2.
-[000083.43]  07-20 20:10  TwoPointCorrelationFunction  INFO     Analytically computing two-point counts R1R2.
-Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_cov_jkn_8_3_r_25_150.dat
-Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_xi_jkn_8_3_r_25_150.dat
+[000004.02]  08-02 21:53  numexpr.utils                INFO     Note: detected 256 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+[000004.02]  08-02 21:53  numexpr.utils                INFO     Note: NumExpr detected 256 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+[000023.38]  08-02 21:54  BoxSubsampler                INFO     Labels from 0 to 124.
+[000023.42]  08-02 21:54  TwoPointCorrelationFunction  INFO     Using estimator <class 'pycorr.twopoint_jackknife.JackknifeNaturalTwoPointEstimator'>.
+[000023.42]  08-02 21:54  TwoPointCorrelationFunction  INFO     Computing two-point counts D1D2.
+[000064.34]  08-02 21:54  TwoPointCorrelationFunction  INFO     Analytically computing two-point counts R1R2.
+Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_cov_jkn_5_3_r_60_160.dat
+Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_xi_jkn_5_3_r_60_160.dat
+[000064.83]  08-02 21:54  BoxSubsampler                INFO     Labels from 0 to 511.
+[000064.86]  08-02 21:54  TwoPointCorrelationFunction  INFO     Using estimator <class 'pycorr.twopoint_jackknife.JackknifeNaturalTwoPointEstimator'>.
+[000064.87]  08-02 21:54  TwoPointCorrelationFunction  INFO     Computing two-point counts D1D2.
+[000121.76]  08-02 21:55  TwoPointCorrelationFunction  INFO     Analytically computing two-point counts R1R2.
+Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_cov_jkn_8_3_r_60_160.dat
+Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_xi_jkn_8_3_r_60_160.dat
