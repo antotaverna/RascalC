@@ -172,6 +172,43 @@ ax4.legend(fontsize=5)
 
 plt.show()
 ##################################################
+############################################
+############# plot Misha ###################
+
+fig, (ax3,ax4) = plt.subplots(1,2, figsize=(12,5))
+
+fig.suptitle(r'2pcf nd3_00')
+# the index of the position of yticks
+num_ticks = 25
+ticks = np.linspace(25, 145, num_ticks)
+
+ax3.errorbar(r,r**2*xi,yerr=r**2*err5x_bug, label='error RascalC 5x (w/bug)',color='m')
+ax3.errorbar(r,r**2*xi,yerr=r**2*err2x_bug, label='error RascalC 2x (w/bug)',color='g')
+b=ax3.errorbar(r,r**2*xi,yerr=r**2*error, label='error RascalC 1x (w/bug)',color='r')
+b[-1][0].set_linestyle('-.')
+#ax3.set_aspect(0.5)
+ax3.set_ylim(-80,90)
+ax3.set_xlabel('r [Mpc/h]')
+ax3.set_ylabel(r'$r^2 \xi(r)$')
+ax3.legend(fontsize=10)
+
+ax4.errorbar(r,r**2*xi,yerr=r**2*err_pycorr, marker='.', label='pycorr nsv=8^3 (binsize=5 Mpc/h)',color='b')
+#ax4.errorbar(r,r**2*xi,yerr=r**2*err10x, label='error RascalC 10x')
+#ax4.errorbar(r,r**2*xi,yerr=r**2*err5x, label='error RascalC 5x')
+ax4.errorbar(r,r**2*xi,yerr=r**2*err2x, label='error RascalC 2x',color='g')
+a=ax4.errorbar(r,r**2*xi,yerr=r**2*error, label='error RascalC 1x',color='r')
+a[-1][0].set_linestyle('-.')
+#ax3.set_aspect(0.5)
+ax4.set_ylim(-80,90)
+ax4.set_xlabel('r [Mpc/h]')
+ax4.set_ylabel(r'$r^2 \xi(r)$')
+ax4.legend(fontsize=10)
+
+plt.show()
+##################################################
+##################################################
+##################################################
+##################################################
 
 dd=np.genfromtxt('nd3_00/xi_to_multipoles.dat')
 r = dd[:,0]
@@ -244,3 +281,6 @@ plt.show()
 
 sns.heatmap(R_l0, vmin=0, vmax=1.)
 plt.show()
+
+
+
