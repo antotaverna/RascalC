@@ -18,7 +18,8 @@ public:
 	//const char default_fname[500] = "../den_files/nd1_00_randoms_1x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_1x_fixedAmp_002.txt";
-	const char default_fname[500] = "../den_files/nd3_00_randoms_2x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_2x_fixedAmp_002.txt";
+	const char default_fname[500] = "../den_files/nd3_00_randoms_5x_fixedAmp_002.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;

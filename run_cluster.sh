@@ -31,7 +31,7 @@ export NUMEXPR_MAX_THREADS=64
 ##./cov -def
 
 ##python python/post_process_legendre.py output/nd1_00/ 25 0 30 output/nd1_00/ 1.
-##python python/post_process_legendre.py output/nd3_00/ 25 0 30 output/nd3_00/ 1.
+python python/post_process_legendre.py output/nd3_00/ 25 0 30 output/nd3_00/ 1.
 
 
 ##python python/convert_xi_to_multipoles.py output/nd1_00/xi_n200_m20_periodic_11.dat 0 output/nd1_00/xi_to_multipoles.dat
