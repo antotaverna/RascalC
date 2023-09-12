@@ -25,6 +25,7 @@ export NUMEXPR_MAX_THREADS=64
 
 ##python python/compute_correction_function.py ../den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt radial_binning_cov.csv output/nd1_00/ 1
 ##python python/compute_correction_function.py ../den_files/mass_cuts_nd3_00_z0_fixedAmp_002.txt radial_binning_cov.csv output/nd3_00/ 1
+##python python/compute_correction_function.py ../den_files/nd3_00_randoms_2x_fixedAmp_002.txt radial_binning_cov.csv output/nd3_00/ 1
 ##python python/compute_correction_function.py ../den_files/mass_cuts_nd3_00_z0_fixedAmp_002.txt radial_binning_cov_60_160.csv output/nd3_00/ 1
 
 ##make
