@@ -18,12 +18,12 @@ public:
 	//const char default_fname[500] = "../den_files/nd1_00_randoms_1x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_1x_fixedAmp_002.txt";
-	const char default_fname[500] = "../den_files/nd3_00_randoms_2x_fixedAmp_002.txt";
-	//const char default_fname[500] = "../den_files/nd3_00_randoms_5x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_2x_fixedAmp_002.txt";
+	const char default_fname[500] = "../den_files/nd3_00_randoms_5x_fixedAmp_002.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;
-    const char default_radial_bin_file[500] = "radial_binning_cov.csv";
+    const char default_radial_bin_file[500] = "radial_binning_cov_25_150.csv";
     //const char default_radial_bin_file[500] = "radial_binning_cov_60_160.csv";
 
     // The name of the correlation function file for the first set of particles
@@ -83,7 +83,8 @@ public:
     char *phi_file = NULL; // Survey correction function coefficient file
     //const char default_phi_file[500] = "output/nd1_00/BinCorrectionFactor_n25_periodic_11.txt";
     //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150.txt";
-    const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_2x.txt";
+    const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_5x.txt";
 
 
     //-------- POWER PARAMETERS (not yet publicly released) ------------------
