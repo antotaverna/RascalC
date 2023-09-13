@@ -23,16 +23,21 @@ export NUMEXPR_MAX_THREADS=64
 ##python3 python/xi_estimator_periodic.py ../den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt radial_binning_corr.csv 1000. 1. 20 64 output/nd1_00/
 ##python3 python/xi_estimator_periodic_mod.py #para nd3_00
 
-##python python/compute_correction_function.py ../den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt radial_binning_cov.csv output/nd1_00/ 1
-##python python/compute_correction_function.py ../den_files/mass_cuts_nd3_00_z0_fixedAmp_002.txt radial_binning_cov.csv output/nd3_00/ 1
-##python python/compute_correction_function.py ../den_files/nd3_00_randoms_2x_fixedAmp_002.txt radial_binning_cov.csv output/nd3_00/ 1
-##python python/compute_correction_function.py ../den_files/mass_cuts_nd3_00_z0_fixedAmp_002.txt radial_binning_cov_60_160.csv output/nd3_00/ 1
+##nd1 (se rompio)
+##python python/compute_correction_function.py ../den_files/nd1_00_randoms_10x_fixedAmp_002.txt radial_binning_cov_60_160.csv output/nd1_00/ 1
+##python python/compute_correction_function.py ../den_files/nd1_00_randoms_10x_fixedAmp_002.txt radial_binning_cov_25_150.csv output/nd1_00/ 1
+##nd3
+##python python/compute_correction_function.py ../den_files/nd3_00_randoms_10x_fixedAmp_002.txt radial_binning_cov_60_160.csv output/nd3_00/ 1
+##python python/compute_correction_function.py ../den_files/nd3_00_randoms_1x_fixedAmp_002.txt radial_binning_cov_25_150.csv output/nd3_00/ 1
+##python python/compute_correction_function.py ../den_files/nd3_00_randoms_2x_fixedAmp_002.txt radial_binning_cov_25_150.csv output/nd3_00/ 1
+##python python/compute_correction_function.py ../den_files/nd3_00_randoms_5x_fixedAmp_002.txt radial_binning_cov_25_150.csv output/nd3_00/ 1
+##python python/compute_correction_function.py ../den_files/nd3_00_randoms_10x_fixedAmp_002.txt radial_binning_cov_25_150.csv output/nd3_00/ 1
 
 ##make
-##./cov -def
+./cov -def
 
 ##python python/post_process_legendre.py output/nd1_00/ 25 0 30 output/nd1_00/ 1.
-python python/post_process_legendre.py output/nd3_00/ 25 0 30 output/nd3_00/ 1.
+##python python/post_process_legendre.py output/nd3_00/ 25 0 30 output/nd3_00/ 1.
 
 
 ##python python/convert_xi_to_multipoles.py output/nd1_00/xi_n200_m20_periodic_11.dat 0 output/nd1_00/xi_to_multipoles.dat
