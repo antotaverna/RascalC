@@ -17,9 +17,9 @@ public:
 	//const char default_fname[500] = "../den_files/nd1_00_randoms_10x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd1_00_randoms_1x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x_fixedAmp_002.txt";
-	//const char default_fname[500] = "../den_files/nd3_00_randoms_1x_fixedAmp_002.txt";
+	const char default_fname[500] = "../den_files/nd3_00_randoms_1x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_2x_fixedAmp_002.txt";
-	const char default_fname[500] = "../den_files/nd3_00_randoms_5x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_5x_fixedAmp_002.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;
@@ -53,7 +53,7 @@ public:
 
     // The grid size, which should be tuned to match boxsize and rmax.
 	// This uses the maximum width of the cuboidal box.
-	int nside = 71; //nd3_00 1x
+	int nside = 71; //nd3_00 1x,2x,5x
 	//int nside = 151; //nd3_00 10x
 	//int nside = 401; //nd1_00 10x
 	//int nside = 201; //nd1_00 1x
@@ -82,9 +82,11 @@ public:
 
     char *phi_file = NULL; // Survey correction function coefficient file
     //const char default_phi_file[500] = "output/nd1_00/BinCorrectionFactor_n25_periodic_11.txt";
-    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150.txt";
+    const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_1x.txt";
     //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_2x.txt";
-    const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_5x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_5x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_10x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_10x.txt";
 
 
     //-------- POWER PARAMETERS (not yet publicly released) ------------------
@@ -99,6 +101,10 @@ public:
 
     // Maximum number of iterations to compute the C_ab integrals over
     int max_loops = 30;
+    // Number of loops to output into each subsample/file
+    int loops_per_sample = 1;
+    // Number of output subsamples/files
+    int no_subsamples = 120;
 
     // Exit after relative Frobenius difference is less than (convergence_threshold_percent %) for (convergence_ntimes) times
     Float convergence_threshold_percent = 0.01;
@@ -240,7 +246,8 @@ public:
                 Float tmp_box=atof(argv[++i]);
                 rect_boxsize = {tmp_box,tmp_box,tmp_box};
                 }
-        else if (!strcmp(argv[i],"-maxloops")) max_loops = atof(argv[++i]);
+        else if (!strcmp(argv[i],"-maxloops")) max_loops = atoi(argv[++i]);
+        else if (!strcmp(argv[i],"-loopspersample")) loops_per_sample = atoi(argv[++i]);
         else if (!strcmp(argv[i],"-rescale")) rescale = atof(argv[++i]);
 		else if (!strcmp(argv[i],"-mumax")) mumax = atof(argv[++i]);
 		else if (!strcmp(argv[i],"-mumin")) mumin = atof(argv[++i]);
@@ -338,6 +345,8 @@ public:
 	    assert(nside%2!=0); // The probability integrator needs an odd grid size
 
 	    assert(nofznorm>0); // need some galaxies!
+        assert(max_loops % loops_per_sample == 0); // group size need to divide the number of loops
+        no_subsamples = max_loops / loops_per_sample;
 #ifndef THREE_PCF
 	    //assert(mumin>=0); // We take the absolte value of mu
 #endif
@@ -522,6 +531,7 @@ public:
 #endif
 		printf("Number of galaxies = %6.5e\n",nofznorm);
         printf("Maximum number of integration loops = %d\n",max_loops);
+        printf("Number of output subsamples = %d\n", no_subsamples);
         printf("Output directory: '%s'\n",out_file);
 
 	}
@@ -583,6 +593,7 @@ private:
         fprintf(stderr, "   -jackknife2 <filename>: (Optional) File containing the {2,2} jackknife weights (normally computed from Corrfunc)\n");
 #endif
         fprintf(stderr, "   -maxloops <max_loops>: Maximum number of integral loops\n");
+        fprintf(stderr, "   -loopspersample <loops_per_sample>: Number of loops to collapse into each subsample. Default 1.\n");
         fprintf(stderr, "   -N2 <N2>: Number of secondary particles to choose per primary particle\n");
         fprintf(stderr, "   -N3 <N3>: Number of tertiary particles to choose per secondary particle\n");
         fprintf(stderr, "   -N4 <N4>: Number of quaternary particles to choose per tertiary particle\n");
