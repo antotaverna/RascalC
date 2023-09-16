@@ -1,15 +1,15 @@
 import numpy as np
 from convert_cov import convert_cov
 
-rand='5x'
-data = np.load('nd3_00/Rescaled_Covariance_Matrices_Legendre_n25_l0_'+rand+'.npz') #nd3_00 fixedAmp_002
-#data = np.load('nd3_00/Rescaled_Covariance_Matrices_Legendre_n25_l0_60_160_1x.npz') #nd3_00 fixedAmp_002
+rand='10x'
+#data = np.load('nd3_00/Rescaled_Covariance_Matrices_Legendre_n25_l0_'+rand+'.npz') #nd3_00 fixedAmp_002
+data = np.load('nd3_00/Rescaled_Covariance_Matrices_Legendre_n25_l0_60_160_'+rand+'.npz') #nd3_00 fixedAmp_002
 print(data.files)
 
 cov=data.get('full_theory_covariance')
 
-rmin= 25.0; rmax= 150.0
-#rmin= 60.0; rmax= 160.0
+#rmin= 25.0; rmax= 150.0
+rmin= 60.0; rmax= 160.0
 rmins= str(int(rmin))
 rmaxs= str(int(rmax))
 env='3_00'
