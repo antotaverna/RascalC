@@ -86,8 +86,8 @@ public:
     //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_2x.txt";
     //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_5x.txt";
     //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_10x.txt";
-    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_10x.txt";
     const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_1x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_10x.txt";
 
 
     //-------- POWER PARAMETERS (not yet publicly released) ------------------
