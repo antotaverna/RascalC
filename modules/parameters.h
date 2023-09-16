@@ -16,10 +16,10 @@ public:
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x.txt";
 	//const char default_fname[500] = "../den_files/nd1_00_randoms_10x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd1_00_randoms_1x_fixedAmp_002.txt";
-	const char default_fname[500] = "../den_files/nd3_00_randoms_10x_fixedAmp_002.txt";
-	//const char default_fname[500] = "../den_files/nd3_00_randoms_1x_fixedAmp_002.txt";
+	const char default_fname[500] = "../den_files/nd3_00_randoms_1x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_2x_fixedAmp_002.txt";
 	//const char default_fname[500] = "../den_files/nd3_00_randoms_5x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x_fixedAmp_002.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;
@@ -53,8 +53,8 @@ public:
 
     // The grid size, which should be tuned to match boxsize and rmax.
 	// This uses the maximum width of the cuboidal box.
-	//int nside = 71; //nd3_00 1x,2x,5x
-	int nside = 151; //nd3_00 10x
+	int nside = 71; //nd3_00 1x,2x,5x
+	//int nside = 151; //nd3_00 10x
 	//int nside = 401; //nd1_00 10x
 	//int nside = 201; //nd1_00 1x
 
@@ -86,7 +86,8 @@ public:
     //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_2x.txt";
     //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_5x.txt";
     //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_10x.txt";
-    const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_10x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_10x.txt";
+    const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_1x.txt";
 
 
     //-------- POWER PARAMETERS (not yet publicly released) ------------------
