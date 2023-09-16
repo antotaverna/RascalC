@@ -23,11 +23,17 @@ export NUMEXPR_MAX_THREADS=64
 ##python3 python/xi_estimator_periodic.py ../den_files/mass_cuts_nd1_00_z0_fixedAmp_002.txt radial_binning_corr.csv 1000. 1. 20 64 output/nd1_00/
 ##python3 python/xi_estimator_periodic_mod.py #para nd3_00
 
+##--------------------correction_function
 ##nd1 (se rompio)
 ##python python/compute_correction_function.py ../den_files/nd1_00_randoms_10x_fixedAmp_002.txt radial_binning_cov_60_160.csv output/nd1_00/ 1
 ##python python/compute_correction_function.py ../den_files/nd1_00_randoms_10x_fixedAmp_002.txt radial_binning_cov_25_150.csv output/nd1_00/ 1
+
 ##nd3
+##python python/compute_correction_function.py ../den_files/nd3_00_randoms_1x_fixedAmp_002.txt radial_binning_cov_60_160.csv output/nd3_00/ 1
+##python python/compute_correction_function.py ../den_files/nd3_00_randoms_2x_fixedAmp_002.txt radial_binning_cov_60_160.csv output/nd3_00/ 1
+##python python/compute_correction_function.py ../den_files/nd3_00_randoms_5x_fixedAmp_002.txt radial_binning_cov_60_160.csv output/nd3_00/ 1
 ##python python/compute_correction_function.py ../den_files/nd3_00_randoms_10x_fixedAmp_002.txt radial_binning_cov_60_160.csv output/nd3_00/ 1
+
 ##python python/compute_correction_function.py ../den_files/nd3_00_randoms_1x_fixedAmp_002.txt radial_binning_cov_25_150.csv output/nd3_00/ 1
 ##python python/compute_correction_function.py ../den_files/nd3_00_randoms_2x_fixedAmp_002.txt radial_binning_cov_25_150.csv output/nd3_00/ 1
 ##python python/compute_correction_function.py ../den_files/nd3_00_randoms_5x_fixedAmp_002.txt radial_binning_cov_25_150.csv output/nd3_00/ 1
