@@ -19,10 +19,10 @@ print('Inicio lectura')
 #envdir = '/home/ataverna/Documentos/proyectos/bao-madrid/den_files/'
 #outdir = '/home/ataverna/Documentos/proyectos/bao-madrid/RascalC/output/nd3_00/'
 envdir = '/home/ataverna/den_files/'
-outdir = '/home/ataverna/RascalC/output/nd3_00/'
+outdir = '/home/ataverna/RascalC/output/nd1_00/'
 
 #env_list = ['nd0_00','nd0_96', 'nd1_00','nd1_22', 'nd2_00', 'nd3_00']
-env = '3_00'
+env = '1_00'
 
 #rmin= 25.0; rmax= 150.0
 #rmin= 70.0; rmax= 150.0

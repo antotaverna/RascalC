@@ -109,7 +109,7 @@ xib = dcorr2[:,1]
 errb_pycorr = dcorr2[:,2]
 
 ##############################
-#calcuate 2pcr using fortran
+#calcuate 2pcf using fortran
 ##############################
 #ff=np.genfromtxt('../../get_env/n_density/test_jackknife/fortran/output/xi_lin_nsv3_512_bao_nd3_00_rodajas.dat')
 ff=np.genfromtxt('../../get_env/n_density/test_jackknife/fortran/output/xi_lin_nsv3_512_bao_nd3_00_subboxes.dat')
