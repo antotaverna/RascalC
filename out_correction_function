@@ -1,0 +1,22 @@
+nohup: ignoring input
+Assuming periodic boundary conditions - so Phi(r,mu) = 1 everywhere
+
+Loading galaxies
+Traceback (most recent call last):
+  File "/home/ataverna/RascalC/python/compute_correction_function.py", line 38, in <module>
+    hull = ss.ConvexHull(np.vstack([gal_x,gal_y,gal_z]).T)
+  File "qhull.pyx", line 2434, in scipy.spatial.qhull.ConvexHull.__init__
+  File "qhull.pyx", line 355, in scipy.spatial.qhull._Qhull.__init__
+scipy.spatial.qhull.QhullError: QH6421 qhull internal error (qh_maxsimplex): qh.MAXwidth required for qh_maxsimplex.  Used to estimate determinate
+
+While executing:  | qhull i Qt
+Options selected for Qhull 2019.1.r 2019/06/21:
+  run-id 221443558  incidence  Qtriangulate  _pre-merge  _zero-centrum
+  _max-width  0  Error-roundoff 5.8e-13  _one-merge 4.1e-12  _near-inside 2e-11
+  Visible-distance 1.2e-12  U-max-coplanar 1.2e-12  Width-outside 2.3e-12
+  _wide-facet 7e-12  _maxoutside 4.7e-12
+
+A Qhull internal error has occurred.  Please send the input and output to
+qhull_bug@qhull.org. If you can duplicate the error with logging ('T4z'), please
+include the log file.
+
