@@ -1,7 +1,7 @@
 import numpy as np
 from convert_cov import convert_cov
 
-rand='1x'
+rand='5x'
 #data = np.load('nd3_00/Rescaled_Covariance_Matrices_Legendre_n25_l0_'+rand+'.npz') #nd3_00 fixedAmp_002
 data = np.load('nd3_00/Rescaled_Covariance_Matrices_Legendre_n25_l0_60_160_'+rand+'.npz') #nd3_00 fixedAmp_002
 print(data.files)
