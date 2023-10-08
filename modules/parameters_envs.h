@@ -13,27 +13,37 @@ public:
 
     // The name of the input random particle files (first set)
 	char *fname = NULL;
-	const char default_fname[500] = "../env_files/randoms_2x_centros_n_50_z0_fixedAmp_002.txt";
+	//const char default_fname[500] = "../env_files/randoms_5x_filaments_pweb_z0_fixedAmp_002.txt";
+	const char default_fname[500] = "../env_files/randoms_2x_voids_pweb_z0_fixedAmp_002.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;
-    //const char default_radial_bin_file[500] = "radial_binning_cov_25_150.csv";
     const char default_radial_bin_file[500] = "radial_binning_cov_60_160.csv";
 
     // The name of the correlation function file for the first set of particles
 	char *corname = NULL;
-	const char default_corname[500] = "output/first/xi_n200_m20_periodic_11.dat";
+	//const char default_corname[500] = "output/env_pweb/xi_n200_m20_periodic_11_filaments.dat";
+	const char default_corname[500] = "output/env_pweb/xi_n200_m20_periodic_11_voids.dat";
 
     // Name of the correlation function radial binning .csv file
     char *radial_bin_file_cf = NULL;
     const char default_radial_bin_file_cf[500] = "radial_binning_corr.csv";
 
     // Number of galaxies in first dataset
-    Float nofznorm=2324602; //nd1_00 fixedAmp_002
+    Float nofznorm=19747142; //voids_pweb fixedAmp_002
+    //Float nofznorm=39526172; //filaments_pweb fixedAmp_002
+    //nv_pweb=19747142
+    //nv_vweb=34278534
+    //ns_pweb=47650750
+    //ns_vweb=54066988
+    //nf_pweb=39526172
+    //nf_vweb=25311440
+    //nk_pweb=9306083
+    //nk_vweb=2573185
 
     // Output directory
     char *out_file = NULL;
-    const char default_out_file[500] = "output/first/";
+    const char default_out_file[500] = "output/env_pweb/";
 
     // The number of mu bins in the correlation function
     int mbin_cf = 20;
@@ -44,10 +54,10 @@ public:
 
     // The grid size, which should be tuned to match boxsize and rmax.
 	// This uses the maximum width of the cuboidal box.
-	//int nside = 71; //nd3_00 1x,2x,5x
+	int nside = 71; //nd3_00 1x,2x,5x
 	//int nside = 151; //nd3_00 10x
 	//int nside = 401; //nd1_00 10x
-	int nside = 201; //nd1_00 1x
+	//int nside = 201; //nd1_00 1x
 
     // Whether or not we are using a periodic box
 	bool perbox = true;
@@ -72,7 +82,8 @@ public:
     int max_l = 0; // max Legendre moment (must be even unless computing 3PCF)
 
     char *phi_file = NULL; // Survey correction function coefficient file
-    const char default_phi_file[500] = "output/first/BinCorrectionFactor_n25_periodic_11_60_160_2x.txt";
+    //const char default_phi_file[500] = "output/env_pweb/BinCorrectionFactor_n25_periodic_11_filaments.txt";
+    const char default_phi_file[500] = "output/env_pweb/BinCorrectionFactor_n25_periodic_11_voids.txt";
 
 
     //-------- POWER PARAMETERS (not yet publicly released) ------------------

@@ -1,20 +1,34 @@
 nohup: ignoring input
 Inicio lectura
-3_00 (1000057,)
-/home/ataverna/den_files/mass_cuts_nd3_00_z0_fixedAmp_002.h5
-3_00 (1000057, 3)
-3_00 (1000057, 3)
-[000004.02]  08-02 21:53  numexpr.utils                INFO     Note: detected 256 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-[000004.02]  08-02 21:53  numexpr.utils                INFO     Note: NumExpr detected 256 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
-[000023.38]  08-02 21:54  BoxSubsampler                INFO     Labels from 0 to 124.
-[000023.42]  08-02 21:54  TwoPointCorrelationFunction  INFO     Using estimator <class 'pycorr.twopoint_jackknife.JackknifeNaturalTwoPointEstimator'>.
-[000023.42]  08-02 21:54  TwoPointCorrelationFunction  INFO     Computing two-point counts D1D2.
-[000064.34]  08-02 21:54  TwoPointCorrelationFunction  INFO     Analytically computing two-point counts R1R2.
-Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_cov_jkn_5_3_r_60_160.dat
-Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_xi_jkn_5_3_r_60_160.dat
-[000064.83]  08-02 21:54  BoxSubsampler                INFO     Labels from 0 to 511.
-[000064.86]  08-02 21:54  TwoPointCorrelationFunction  INFO     Using estimator <class 'pycorr.twopoint_jackknife.JackknifeNaturalTwoPointEstimator'>.
-[000064.87]  08-02 21:54  TwoPointCorrelationFunction  INFO     Computing two-point counts D1D2.
-[000121.76]  08-02 21:55  TwoPointCorrelationFunction  INFO     Analytically computing two-point counts R1R2.
-Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_cov_jkn_8_3_r_60_160.dat
-Output: /home/ataverna/RascalC/output/nd3_00/pycorr_z0_nd3_00_xi_jkn_8_3_r_60_160.dat
+1_00 (99093283,)
+/home/ataverna/den_files/mass_cuts_nd1_00_z0_fixedAmp_002.h5
+1_00 (99093283, 3)
+1_00 (99093283, 3)
+[000023.62]  09-25 13:34  numexpr.utils                INFO     Note: detected 256 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+[000023.62]  09-25 13:34  numexpr.utils                INFO     Note: NumExpr detected 256 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+[000037.42]  09-25 13:34  Exception                    CRITICAL 
+====================================================================================================
+Traceback (most recent call last):
+  File "/home/ataverna/anaconda3/envs/nbodykit/lib/python3.8/site-packages/pycorr/corrfunc.py", line 130, in call_corrfunc
+    return method(*args, **kwargs)
+TypeError: DD() got an unexpected keyword argument 'bin_type'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "2pcf_pycorr.py", line 75, in <module>
+    DD = TwoPointCounter('s', edges, positions1=dat,
+  File "/home/ataverna/anaconda3/envs/nbodykit/lib/python3.8/site-packages/pycorr/twopoint_counter.py", line 61, in __call__
+    return get_twopoint_counter(engine)(*args, **kwargs)
+  File "/home/ataverna/anaconda3/envs/nbodykit/lib/python3.8/site-packages/pycorr/twopoint_counter.py", line 432, in __init__
+    self.run()
+  File "/home/ataverna/anaconda3/envs/nbodykit/lib/python3.8/site-packages/pycorr/corrfunc.py", line 147, in run
+    result = call_corrfunc(theory.DD, autocorr, nthreads=self.nthreads, binfile=self.edges[0],
+  File "/home/ataverna/anaconda3/envs/nbodykit/lib/python3.8/site-packages/pycorr/corrfunc.py", line 132, in call_corrfunc
+    raise TwoPointCounterError('Please reinstall relevant Corrfunc branch (including PIP weights):\n\
+pycorr.twopoint_counter.TwoPointCounterError: Please reinstall relevant Corrfunc branch (including PIP weights):
+                                            > pip uninstall Corrfunc
+                                            > pip install git+https://github.com/adematti/Corrfunc@desi
+
+====================================================================================================
+[000037.42]  09-25 13:34  Exception                    CRITICAL An error occured.

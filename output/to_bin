@@ -1,0 +1,3 @@
+nohup: ignoring input
+['full_theory_covariance', 'shot_noise_rescaling', 'full_theory_precision', 'N_eff', 'full_theory_D_matrix', 'individual_theory_covariances']
+Output: first/cov_matrix_RascalC_z0_first_r_60_160_2x.dat

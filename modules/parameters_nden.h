@@ -13,7 +13,14 @@ public:
 
     // The name of the input random particle files (first set)
 	char *fname = NULL;
-	const char default_fname[500] = "../env_files/randoms_2x_centros_n_50_z0_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x.txt";
+	//const char default_fname[500] = "../den_files/nd1_00_randoms_10x_fixedAmp_002.txt";
+	const char default_fname[500] = "../den_files/nd1_00_randoms_5x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd1_00_randoms_1x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_1x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_2x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_5x_fixedAmp_002.txt";
+	//const char default_fname[500] = "../den_files/nd3_00_randoms_10x_fixedAmp_002.txt";
 
     // Name of the radial binning .csv file
     char *radial_bin_file = NULL;
@@ -22,18 +29,21 @@ public:
 
     // The name of the correlation function file for the first set of particles
 	char *corname = NULL;
-	const char default_corname[500] = "output/first/xi_n200_m20_periodic_11.dat";
+	const char default_corname[500] = "output/nd1_00/xi_n200_m20_periodic_11.dat";
+	//const char default_corname[500] = "output/nd3_00/xi_n200_m20_periodic_11.dat";
 
     // Name of the correlation function radial binning .csv file
     char *radial_bin_file_cf = NULL;
     const char default_radial_bin_file_cf[500] = "radial_binning_corr.csv";
 
     // Number of galaxies in first dataset
-    Float nofznorm=2324602; //nd1_00 fixedAmp_002
+    Float nofznorm=99093283; //nd1_00 fixedAmp_002
+    //Float nofznorm=1000057; //nd3_00 fixedAmp_002
 
     // Output directory
     char *out_file = NULL;
-    const char default_out_file[500] = "output/first/";
+    const char default_out_file[500] = "output/nd1_00/";
+    //const char default_out_file[500] = "output/nd3_00/";
 
     // The number of mu bins in the correlation function
     int mbin_cf = 20;
@@ -72,7 +82,17 @@ public:
     int max_l = 0; // max Legendre moment (must be even unless computing 3PCF)
 
     char *phi_file = NULL; // Survey correction function coefficient file
-    const char default_phi_file[500] = "output/first/BinCorrectionFactor_n25_periodic_11_60_160_2x.txt";
+    //const char default_phi_file[500] = "output/nd1_00/BinCorrectionFactor_n25_periodic_11.txt";
+    const char default_phi_file[500] = "output/nd1_00/BinCorrectionFactor_n25_periodic_11_60_160_5x.txt";
+    //const char default_phi_file[500] = "output/nd1_00/BinCorrectionFactor_n25_periodic_11_60_160_10x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_1x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_2x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_5x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_25_150_10x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_1x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_2x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_5x.txt";
+    //const char default_phi_file[500] = "output/nd3_00/BinCorrectionFactor_n25_periodic_11_60_160_10x.txt";
 
 
     //-------- POWER PARAMETERS (not yet publicly released) ------------------
