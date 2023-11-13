@@ -7,9 +7,18 @@ import sys
 import numpy as np
 
 # PARAMETERS
-#Dname = '/home/ataverna/env_files/filaments_pweb_z0_fixedAmp_002.txt'
-#Dname = '/home/ataverna/env_files/voids_pweb_z0_fixedAmp_002.txt'
-Dname = '/home/ataverna/env_files/pos_centros_fAmp_002_128.dat'
+cross=1
+if(cross==0):
+    #Dname = '/home/ataverna/env_files/filaments_pweb_z0_fixedAmp_002.txt'
+    #Dname = '/home/ataverna/env_files/voids_pweb_z0_fixedAmp_002.txt'
+    Dname = '/home/ataverna/env_files/pos_centros_fAmp_002_128.dat'
+    multifield = False
+if(cross==1):
+    Dname = '/home/ataverna/env_files/pos_centros_fAmp_002_128.dat'
+    Dname2= '/home/ataverna/env_files/voids_pweb_z0_fixedAmp_002.txt'
+    multifield = True
+
+
 binfile = 'radial_binning_corr.csv'
 boxsize = 1000.
 mu_max = 1.
@@ -18,7 +27,6 @@ nthreads = 96
 outdir = 'output/first/'
 #outdir = 'output/env_pweb/'
 
-multifield = False
 
 ## First read in weights and positions:
 dtype = np.double
@@ -127,7 +135,7 @@ if multifield:
     print("Computing DD pair counts for cross pair counts")
     tmpDD12=DDsmu(0,nthreads,binfile,mu_max,nmu_bins,dX,dY,dZ,weights1=dW,weight_type='pair_product',
                 X2=dX2,Y2=dY2,Z2=dZ2,weights2=dW2,
-                verbose=True,periodic=True)
+                verbose=True,periodic=True, boxsize=1000.)
     DD12_counts = tmpDD12[:]['npairs']*tmpDD12[:]['weightavg']
     DD12_counts/=np.sum(dW)*np.sum(dW2)
     print("Finished after %d seconds"%(time.time()-init))
@@ -138,7 +146,7 @@ if multifield:
     init = time.time()
     print("Computing DD pair counts for second dataset")
     tmpDD2=DDsmu(1,nthreads,binfile,mu_max,nmu_bins,dX2,dY2,dZ2,weights1=dW2,weight_type='pair_product',
-                verbose=True,periodic=True)
+                verbose=True,periodic=True, boxsize=1000.)
     DD2_counts = tmpDD2[:]['npairs']*tmpDD2[:]['weightavg']
     DD2_counts/=np.sum(dW2)**2.
     print("Finished after %d seconds"%(time.time()-init))
